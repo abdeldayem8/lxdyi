@@ -2,32 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+  --bg-body: #081028;
+  --text-color:#AEB9E1;
+  --text-hover:#b7bac1;
+  --bg-search:#182237;
+  --bg-box:#0B1739;
+  --icon-color:#0EBE7F;
+}
+body{
+  background-color: var(--bg-body);
+  color: var(--text-color);
+}
+.general-shadow {
+  box-shadow: 0 8px 28px 0 rgba(1, 5, 17, 0.3);
+}
+.leftsidebarli{
+  display: flex;
+  align-items: center;
+  margin-block: 1.5rem;
+  cursor: pointer;
+  justify-content: space-between;
+}
+.leftsidebarli:hover{
+  background-color: #F5F5F5;
+  color: #333;
+}
+input{
+  background-color: var(--bg-search);
+}
+.box{
+  background-color: var(--bg-box);
+}
+.iconcolor{
+  background-color: var(--icon-color);
+}
+.content{
+  position: relative;
+}
+.data{
+  margin-right: 10px;
+  display: inline-block;
+}
+.line {
+  position: absolute;
+  transform: translateY(-50%);
+  height: 2px;
+  width: 160px;
+  background-color: gray;
+  top: 11px;
+  left: 40%;
+}
+.donut-chart {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.section1, .section2, .section3 {
+  position: absolute;
+  width: 100%; /* Adjust width to control the size of each section */
+  height: 100%; /* Adjust height to control the size of each section */
+  border-radius: 50%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.section1 {
+  border-top: 10px solid  #FF8E26;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid transparent;
+  transform: rotate(0deg);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.section2 {
+  border-top: 10px solid transparent;
+  border-right: 10px solid #14CC26;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  transform: rotate(120deg);
+}
+
+.section3 {
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #3371EB;
+  border-left: 10px solid #fff;
+  transform: rotate(240deg);
 }
